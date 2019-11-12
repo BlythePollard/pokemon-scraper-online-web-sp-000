@@ -17,4 +17,6 @@ class Pokemon
     db.execute(sql, name, type)
     @id = db.execute("SELECT last_insert_rowid() FROM pokemon")
   end
+  
+  def self.find 
 end

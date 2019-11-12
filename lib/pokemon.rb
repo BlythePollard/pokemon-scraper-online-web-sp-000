@@ -14,7 +14,7 @@ class Pokemon
       INSERT INTO pokemon (name, type)
       VALUES (?, ?)
     SQL
-    db.execute(sql, self.name, self.grade)
+    db.execute(sql, self.name, self.type)
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon")
   end
 end

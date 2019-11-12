@@ -10,7 +10,11 @@ class Pokemon
   end
   
   def self.save(id, name, type)
-    
-    
+    sql = <<-SQL
+      INSERT INTO pokemon (name, type)
+      VALUES (?, ?)
+    SQL
+    DB[:conn].execute(sql, self.name, self.grade)
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon")
   end
 end

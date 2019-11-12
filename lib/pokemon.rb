@@ -18,5 +18,7 @@ class Pokemon
     @id = db.execute("SELECT last_insert_rowid() FROM pokemon")
   end
   
-  def self.find 
+  def self.find(id)
+    
+  end
 end
